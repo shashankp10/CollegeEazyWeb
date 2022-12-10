@@ -190,9 +190,9 @@
 .navbar  .nav-item .notesModal .modal .modal-content {
   margin-top: 70px;
   width: 250px;
-  height: 360px;
+  height: 480px;
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.574);
+  background-color: rgb(255, 255, 255);
   box-shadow: 3px 3px 8px rgb(0, 0, 0);
 }
 
@@ -207,14 +207,14 @@
   background-color: white;
   border-radius: 1rem;
   padding: 4px 2px;
-  height: 280px;
+  height: 410px;
 }
 
 
 .navbar .nav-item  .notesModal .modal .modal-dialog .modal-content .modal-body ul li {
 
   list-style: none;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 500;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -233,7 +233,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 540px;
+  height: 580px;
   width: 1050px;
   background-color: white;
   border-radius: 1.5rem;
@@ -275,4 +275,10 @@
   width: 200px;
 }
 
-/* modal */
+/* semestercard */
+
+.semestercard{
+width: 200px;
+
+}
+

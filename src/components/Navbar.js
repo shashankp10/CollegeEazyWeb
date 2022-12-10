@@ -6,6 +6,7 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import { SiGooglesheets } from "react-icons/si";
 import { MdSell } from "react-icons/md";
 import Notes from './Notes';
+import SemesterCard from './SemesterCard';
 
 export default function Navbar() {
 
@@ -30,22 +31,88 @@ export default function Navbar() {
                 <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div className="modal-dialog">
                     <div className="modal-content">
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{float:"right"}}></button>
+                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       <div className="modal-body">
                         <ul>
-                          <div className='modalCard'>
-                          <div> <li data-bs-toggle="modal" data-bs-target="#NotesPage"><span href="">NOTES</span></li></div>
-                            <div className="modal  login fade" id="NotesPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                          {/* card semestercard */}
+                          <div className='cardPage'>
+                          <div> <li data-bs-toggle="modal" data-bs-target="#cardPage"><span href="">CSE</span></li></div>
+                            <div className="modal  cardPage fade" id="cardPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div className="modal-dialog">
-                                <div className="modal-content" style={{widht:"700px", height:"500px", display:"flex",alignItems: "center", justifyContent: "center",marginLeft:"140px", marginTop:"0px"}}>
-                                  <Notes />
+                                <div className="modal-content" style={{widht:"700px", height:"580px", display:"flex",alignItems: "center", justifyContent: "center", marginTop:"0px", marginLeft:"100px"}}>
+                                  <SemesterCard/>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          
+                          <div className='cardPage'>
+                          <div> <li data-bs-toggle="modal" data-bs-target="#cardPage"><span href="">IT</span></li></div>
+                            <div className="modal  cardPage fade" id="cardPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div className="modal-dialog">
+                                <div className="modal-content" style={{widht:"700px", height:"530px", display:"flex",alignItems: "center", justifyContent: "center", marginTop:"0px", marginLeft:"100px"}}>
+                                  <SemesterCard/>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          
+                          <div className='cardPage'>
+                          <div> <li data-bs-toggle="modal" data-bs-target="#cardPage"><span href="">AIML</span></li></div>
+                            <div className="modal  cardPage fade" id="cardPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div className="modal-dialog">
+                                <div className="modal-content" style={{widht:"800px", height:"530px", display:"flex",alignItems: "center", justifyContent: "center", marginTop:"0px", marginLeft:"100px"}}>
+                                  <SemesterCard/>
+                                </div>
+                              </div>
+                            </div>
+
+
+                          </div> <div className='cardPage'>
+                          <div> <li data-bs-toggle="modal" data-bs-target="#cardPage"><span href="">AIDS</span></li></div>
+                            <div className="modal  cardPage fade" id="cardPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div className="modal-dialog">
+                                <div className="modal-content" style={{widht:"700px", height:"530px", display:"flex",alignItems: "center", justifyContent: "center", marginTop:"0px", marginLeft:"100px"}}>
+                                  <SemesterCard/>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          
+                          
+                          <div className='cardPage'>
+                          <div> <li data-bs-toggle="modal" data-bs-target="#cardPage"><span href="">ECE</span></li></div>
+                            <div className="modal  cardPage fade" id="cardPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div className="modal-dialog">
+                                <div className="modal-content" style={{widht:"700px", height:"530px", display:"flex",alignItems: "center", justifyContent: "center", marginTop:"0px", marginLeft:"100px"}}>
+                                  <SemesterCard/>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          
+                          <div className='cardPage'>
+                          <div> <li data-bs-toggle="modal" data-bs-target="#cardPage"><span href="">ME</span></li></div>
+                            <div className="modal  cardPage fade" id="cardPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div className="modal-dialog">
+                                <div className="modal-content" style={{widht:"700px", height:"530px", display:"flex",alignItems: "center", justifyContent: "center", marginTop:"0px", marginLeft:"100px"}}>
+                                  <SemesterCard/>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          
+                          <div className='cardPage'>
+                          <div> <li data-bs-toggle="modal" data-bs-target="#cardPage"><span href="">CE</span></li></div>
+                            <div className="modal  cardPage fade" id="cardPage" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div className="modal-dialog">
+                                <div className="modal-content" style={{widht:"700px", height:"530px", display:"flex",alignItems: "center", justifyContent: "center", marginTop:"0px", marginLeft:"100px"}}>
+                                  <SemesterCard/>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div><li><span href="#">BOOKS PDF</span></li></div>
-                          <div><li><span href="#">YOUTUBE LINKS</span></li></div>
-                          <div><li><span href="#">WEB LINKS</span></li></div>
                         </ul>
                       </div>
                     </div>
