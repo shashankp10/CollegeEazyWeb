@@ -10,9 +10,6 @@ export default function Note() {
                     <div className="notebox">
                         <div className="table">
                             <div className="row">
-                                <div >
-                                    <h1 style={{ float:"left",fontSize:"50px", paddingLeft:"50px", margin:"10px 40px 0 30px"}}>NOTES</h1>
-                                </div>
                                 <div>
                                     <body>
                                         <table className="fixed_header" id='fixed_header'>

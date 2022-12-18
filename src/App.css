@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Montserrat:wght@600&family=Nunito:wght@300&family=Playfair+Display+SC&family=Righteous&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Hanken+Grotesk&family=Montserrat:wght@600&family=Nunito:wght@300&family=Playfair+Display+SC&family=Righteous&family=Zen+Dots&display=swap');
 
 /* login page */
 
@@ -130,7 +130,6 @@
 /* Navbar */
 
 .page3 {
-  background-image: url("img/page5.jpg");
   height: 38.5rem;
   background-position: center;
   background-repeat: no-repeat;
@@ -139,13 +138,10 @@
 
 .navbar {
   font-family: 'Montserrat', sans-serif;
-  margin-left: 70px;
   padding-bottom: 10px;
   background-color: #990011FF;
   height: 65px;
-  width: 90%;
   font-size: 17px;
-  border-radius: .8rem;
 }
 
 .navbar .container-fluid{
@@ -210,7 +206,6 @@
 }
 
 .navbar  .nav-item .notesModal .modal .modal-content .btn-close{
-  /* background-color: rgba(255, 0, 0, 0.73); */
   margin-left: 180px;
   margin-top: 10px;
 }
@@ -240,68 +235,51 @@
   color: white;
   border-radius: 1rem;
 }
-/* note table */
-.notesPage{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-}
+/* note table container */
 
-
-.notesPage .notebox{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 470px;
-  width: 1050px;
-  background-color: #FCF6F5FF;
-  box-shadow: 2px 2px 15px rgba(154, 2, 2, 0.883);
-  border-radius: .8rem;
-  padding: 16px 10px;
-}
 
 /* table */
 
 .fixed_header {
-
   border-radius: 1.5rem;
-  height: 80%;
+  height: 90%;
   width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
+  /* table-layout: fixed; */
+  /* border-collapse: collapse; */
 }
 .fixed_header tbody {
-  background: rgba(42, 218, 241, 0.561);
+ 
+  background: rgba(232, 232, 232, 0.561);
   color: rgb(0, 0, 0);
   padding: 8px 0px;
   display: block;
   width: 100%;
   overflow: auto;
-  height: 300px;
+  height: 330px;
   font-size: 25px;
 }
 .fixed_header thead tr {
   display: block;
 }
-.fixed_header thead {
-  background: rgba(255, 158, 47, 0.845);
+
+
+.fixed_header thead tr th {
+  text-align: center;
+  background-color: rgba(255, 183, 112, 0.845);
   color: rgba(25, 10, 10, 0.885);
   font-size: 30px;
 }
+
+.fixed_header th{
+  padding: 7px 50px;
+}
 .fixed_header th,
-.fixed_header td {
-  padding: 10px 20px;
-  text-align: left;
-  width: 200px;
+.fixed_header tbody tr td {
+  padding: 7px 60px;
+  width: 240px;
+  text-align: center;
 }
 
-/* semestercard */
-
-.semestercard{
-width: 200px;
-
-}
 
 /* LandingPag */
 .LandingPage{
@@ -479,27 +457,54 @@ width: 200px;
   margin-top: 40px;
 }
 
+/* notepage */
 
-.notesPage .noteboxdropdown{
-  align-items: center;
-  justify-content: center;
-  height: 470px;
-  width: 1050px;
-  background-color: #FCF6F5FF;
-  box-shadow: 2px 2px 15px rgba(154, 2, 2, 0.883);
-  border-radius: .8rem;
-  padding: 16px 10px;
-}
 
-.notesPage .noteboxdropdown .boxnote{
-  margin: 10px 50px;
+.toggel{
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 220px;
-  border-radius: 1rem;
-  background-color: #990011FF;
+  height: 65px;
+  border: .6px solid rgb(59, 59, 59);
+  background-color: rgb(245, 243, 243);
+  width: 78%;
+  border-radius: .7rem;
+}
+.toggel .but button{
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  width: 130px;
+  height: 50px;
+ background-color: rgb(255, 26, 53);
+ border-radius: 8rem;
+ border: none;
+}
+
+.toggel .but button:hover{
+  background-color: rgb(57, 57, 248);
+}
+
+.toggel  form label select{
+  cursor: pointer;
+  margin: 0 30px 0 30px;
+  width: 143px;
+  height: 39px;
+  background-color:rgb(50, 128, 252) ;
+  border: none;
+  color: rgb(255, 254, 254);
+  font-size: 25px;
+  list-style: none;
+  overflow: hidden;
+  border-radius: .5rem;
+}
+
+.toggel form label select option{
+  background-color:rgb(248, 239, 239)  ;
+  color: #990011FF;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+
+
 }
