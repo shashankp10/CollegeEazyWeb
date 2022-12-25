@@ -18,9 +18,9 @@ export default function Navbar() {
   return (
     <>
     <div className="boxnav" >
-    <nav className="navbar navbar-expand-lg navbar-dark ">
+    <nav className="navbar navbar-expand-lg " style={{color:"#3ec8ea"}} >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">College Eazy</Link>
+        <Link className="navbar-brand" to="/" style={{color:"#9b87ff",fontSize:"50px"}}>College Eazy</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

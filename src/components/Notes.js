@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
 import { Link } from "react-router-dom";
+import { SiGooglesheets } from "react-icons/si";
+import photo from '../img/note.jpg'
 
 
 export default function Notes() {
@@ -38,10 +40,23 @@ export default function Notes() {
 
             <Navbar />
 
-            <div className="notepage" >
-                <h1 style={{ float: "left", margin: "0 30px 0  20px", fontSize: "67px", marginTop: "-11px" }}>NOTES</h1>
-                <div className='toggel'>
+            <div className="notepage" style={{ marginTop: "100px 0px " }} >
 
+            <div className="imga" style={{marginBottom:"30px"}}>
+                    <img src={photo} alt="notes" style={{ width: "650px" }} />
+
+                    <div className="headtext" style={{ width: "500px", textAlign: "center", float: "right", margin:"90px 40px 0px 0px"}}>
+                        <h1 style={{ fontSize: "90px", fontFamily: "Playfair Display SC', serif", color: "#3ec8ea", }}> <SiGooglesheets />NOTES
+                        </h1>
+                        <span style={{ color: "#9b87ff", fontSize: "20px" }}>We are here to provid best Notes for all semseter and all branch</span>
+                    </div>
+                </div>
+
+
+
+
+                {/* filter */}
+                <div className='toggel'>
                     <form onSubmit={handleSubmit}>
                         <label placeholder='BRANCH'>
                             <select id='Branch' name='Branch' value={val.Branch} onChange={handleInput} >
@@ -104,10 +119,13 @@ export default function Notes() {
                             <button type="submit">SUBMIT</button>
 
                         </span>
-
                     </form>
                 </div>
 
+
+                <h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Playfair Display SC', serif", color: "#9b87ff", marginTop: "15px", }}>APPLY FILTER FOR BETTER.</h2>
+
+               
             </div>
 
             <div className="notesPage" >
@@ -133,7 +151,7 @@ export default function Notes() {
                                                 <td>1</td>
                                                 <td>9-12-2022</td>
                                                 <td>
-                                                    <Link style={{textDecoration:"none"}} to="/Notes/PrePage">Notes</Link>
+                                                    <Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Notes</Link>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -142,7 +160,7 @@ export default function Notes() {
                                                 <td>1</td>
                                                 <td>8-12-2022</td>
                                                 <td>
-                                                    <Link style={{textDecoration:"none"}} to="/Notes/PrePage">Notes</Link>
+                                                    <Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Notes</Link>
                                                 </td>
                                             </tr>
 
