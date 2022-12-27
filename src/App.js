@@ -11,8 +11,6 @@ import {
 } from "react-router-dom";
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
-import Navbar from './components/Navbar';
-import Note from './components/Note';
 import PrePage from './components/PrePage';
 
 
