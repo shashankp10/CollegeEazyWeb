@@ -34,6 +34,59 @@ export default function Notes() {
         console.log(Data);
     }
 
+
+
+    const Sub = () => {
+        if (val.Branch === "CSE" && val.Semester === "1st") {
+            return (
+                <>
+                    <option style={{ color: "blue" }}>SUBJECT</option>
+                    <option value="ES-101">programmng in C</option>
+                    <option value="BS-103">applied chemistry</option>
+                    <option value="CHEMISRTY">C</option>
+                    <option value="DSA">D</option>
+                    <option value="OOPS">E</option>
+                    <option value="CM">F</option>
+                    <option value="DM">G</option>
+                    <option value="IKS">H</option>
+                </>
+            );
+        }
+
+        else if(val.Branch === "CSE" && val.Semester === "2nd"){
+            return (
+                <>
+                    <option style={{ color: "blue" }}>SUBJECT</option>
+                    <option value="PHYSICS">G</option>
+                    <option value="MATHS">H</option>
+                    <option value="CHEMISRTY">I</option>
+                    <option value="DSA">J</option>
+                    <option value="OOPS">K</option>
+                    <option value="CM">L</option>
+                    <option value="DM">M</option>
+                    <option value="IKS">N</option>
+                </>
+            );
+        }
+
+        else if(val.Branch === "CSE" && val.Semester === "3rd"){
+            return (
+                <>
+                    <option style={{ color: "blue" }}>SUBJECT</option>
+                    <option value="PHYSICS">O</option>
+                    <option value="MATHS">P</option>
+                    <option value="CHEMISRTY">Q</option>
+                    <option value="DSA">R</option>
+                    <option value="OOPS">S</option>
+                    <option value="CM">I</option>
+                    <option value="DM">U</option>
+                    <option value="IKS">V</option>
+                </>
+            );
+        }
+    }
+
+
     return (
         <>
 
@@ -42,10 +95,10 @@ export default function Notes() {
 
             <div className="notepage" style={{ marginTop: "100px 0px " }} >
 
-            <div className="imga" style={{marginBottom:"30px"}}>
+                <div className="imga" style={{ marginBottom: "30px" }}>
                     <img src={photo} alt="notes" style={{ width: "650px" }} />
 
-                    <div className="headtext" style={{ width: "500px", textAlign: "center", float: "right", margin:"90px 40px 0px 0px"}}>
+                    <div className="headtext" style={{ width: "500px", textAlign: "center", float: "right", margin: "90px 40px 0px 0px" }}>
                         <h1 style={{ fontSize: "90px", fontFamily: "Playfair Display SC', serif", color: "#3ec8ea", }}> <SiGooglesheets />NOTES
                         </h1>
                         <span style={{ color: "#9b87ff", fontSize: "20px" }}>We are here to provid best Notes for all semseter and all branch</span>
@@ -89,17 +142,11 @@ export default function Notes() {
 
 
 
+
                         <label placeholder='Subject'>
                             <select id='Subject' name='Subject' value={val.Subject} onChange={handleInput} >
                                 <option style={{ color: "blue" }}>SUBJECT</option>
-                                <option value="PHYSICS">PHYSICS</option>
-                                <option value="MATHS">MATHS</option>
-                                <option value="CHEMISRTY">CHEMISRTY</option>
-                                <option value="DSA">DSA</option>
-                                <option value="OOPS">OOPS</option>
-                                <option value="CM">CM</option>
-                                <option value="DM">DM</option>
-                                <option value="IKS">IKS</option>
+                                <Sub />
                             </select>
                         </label>
 
@@ -125,7 +172,7 @@ export default function Notes() {
 
                 <h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Playfair Display SC', serif", color: "#9b87ff", marginTop: "15px", }}>APPLY FILTER FOR BETTER.</h2>
 
-               
+
             </div>
 
             <div className="notesPage" >

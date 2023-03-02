@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import SignUp from './SignUp';
+import { Login } from '../Servises/LoginServise';
 
 export default function LoginPage() {
 
@@ -30,6 +31,17 @@ export default function LoginPage() {
     const newData = { ...userRegistration, id: Date().toString() }
     setData([...Data, newData]);
     console.log(Data);
+
+
+    // call server api to sending the data 
+    Login(Data).then((resp)=>{
+      console.log(resp);
+      console.log('successfull');
+    }).catch ((error)=>{
+      console.log(error)
+      console.log("error occured");
+    })
+
     setUserRegistration({
       EnrollmentNo: "",
       passward: ""

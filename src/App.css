@@ -26,6 +26,7 @@
   width: 400px;
   height: 60px;
   margin-bottom: 20px;
+  border-radius: 1.5rem;
 
 }
 
@@ -94,6 +95,7 @@
   width: 400px;
   height: 40px;
   margin-bottom: 10px;
+  border-radius: 1.5rem;
 }
 
 .containerS .button {
@@ -169,13 +171,16 @@
 }
 
 .navbar .modalCard .modal {
-  margin-top: 50px;
+  margin-top: 20px;
 
 }
 
 .navbar .modalCard .modal .modal-dialog .modal-content {
   height: 530px;
   border-radius: 20px;
+  background-color: rgb(235, 242, 248);
+  box-shadow: 0.4px 0px 3px 1px rgba(48, 48, 48, 0.702);
+  border: none;
 }
 
 .navbar .modalCard .modal .modal-content .btn-close {
