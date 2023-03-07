@@ -596,3 +596,38 @@ border-radius: .5rem;
 .App-header button:hover{
   background-color: #241670;
 }
+
+.dropdown{
+  width: 50%;
+  padding: 0px 10px;
+  /* margin-left: 25px; */
+  margin-bottom: 20px;
+}
+.dropdown .dropbtn{
+  height: 40px;
+  border: none;
+  color: black;
+  background-color: white;
+
+}
+
+.dropdown button{
+     width: 90%;
+    margin: 0px;
+    border-radius: 2rem;
+}
+
+.SignUplabel label select{
+  cursor: pointer;
+  margin: 0 0px 10px 0px;
+  padding: 0 3px;
+  width: 360px;
+  height: 40px;
+  background-color: #9b87ff;
+  border: none;
+  color: rgb(255, 254, 254);
+  font-size: 25px;
+  list-style: none;
+  overflow: hidden;
+  border-radius: 0.3rem;
+}

@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import SignUp from './SignUp';
-import { Login } from '../Servises/LoginServise';
+import axios from 'axios';
+import * as Yup from "yup";
+import { useFormik } from 'formik';
 
 export default function LoginPage() {
 
@@ -9,80 +11,77 @@ export default function LoginPage() {
 
   const handleClick = () => {
     setLogin(!login);
-}
+  }
 
-  const [userRegistration, setUserRegistration] = useState({
-    EnrollmentNo: "",
-    passward: ""
+  const formik = useFormik({
+    initialValues: {
+      enrollment: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      enrollment: Yup.string().min(3).max(11).required("Please enter the roll number"),
+      password: Yup.string().min(6).required("Please enter the password"),
+    }),
+    onSubmit: async (values) => {
+      try {
+        // Call server API to send the data
+        console.log(values.enrollment, values.password);
+        await axios.post("http://localhost:8080/collegeazy/login", {
+          enrollment: values.enrollment,
+          password: values.password,
+        })
+        console.log("Successfully login");
+        alert("Successfully login");
+
+        // Clear the form fields after submission
+        formik.resetForm();
+      } catch (error) {
+        console.log(error);
+        alert("An error occurred while submitting the form.");
+      }
+    },
   });
 
-  const [Data, setData] = useState([]);
-
-  const handleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    console.log(name, value);
-
-    setUserRegistration({ ...userRegistration, [name]: value });
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newData = { ...userRegistration, id: Date().toString() }
-    setData([...Data, newData]);
-    console.log(Data);
-
-
-    // call server api to sending the data 
-    Login(Data).then((resp)=>{
-      console.log(resp);
-      console.log('successfull');
-    }).catch ((error)=>{
-      console.log(error)
-      console.log("error occured");
-    })
-
-    setUserRegistration({
-      EnrollmentNo: "",
-      passward: ""
-    });
-  
-
-  }
   return (
     <>
       <div>
-        
+
         {" "} {login ? (
 
 
           <div className="column">
-            <form action="login" onSubmit={handleSubmit}>
+            <form action="login" onSubmit={formik.handleSubmit}>
               <div className='container'>
                 <div className="heading">
                   <h1>Login </h1>
                 </div>
                 <input type="text" className="form-control"
-                  value={userRegistration.EnrollmentNo}
-                  onChange={handleInput}
-                  id="EnrollmentNo" autoComplete="off" name='EnrollmentNo' placeholder="EnrollmentNo" />
+                  onChange={formik.handleChange}
+                  value={formik.values.enrollment}
+                  id="enrollment" autoComplete="off" name='enrollment' placeholder="Enrollment" />
+                {formik.touched.enrollment && formik.errors.enrollment ? (
+                  <div style={{fontSize:"10px", color:"red",marginLeft:"20px",marginBottom:"20px"}}>{formik.errors.enrollment}</div>
+                ) : null}
 
-                <input type="Password" className="form-control"
-                  value={userRegistration.password}
-                  onChange={handleInput}
+                <input type="password" className="form-control"
+                  onChange={formik.handleChange}
+                  value={formik.values.password}
                   id="floatingInput" autoComplete="off" name='password' placeholder="Password" />
+                {formik.touched.password && formik.errors.password ? (
+                  <div style={{fontSize:"10px", color:"red",marginLeft:"20px",marginBottom:"20px"}}>{formik.errors.password}</div>
+                ) : null}
 
                 <div className="column">
                   <div className="button">
                     <button className="btn " type="submit">Login</button>
-                    <span style={{cursor:"pointer", alignItem:"left",color:"blue", textDecoration: "underline"}} onClick={handleClick}>Create A New Account</span>
+                    <span style={{ cursor: "pointer", alignItem: "left", color: "blue", textDecoration: "underline" }} onClick={handleClick}>Create A New Account</span>
                   </div>
                 </div>
               </div>
             </form>
           </div>
-        
-        ) : ( <SignUp />)}
+
+        ) : (<SignUp />)}
 
       </div>
     </>
