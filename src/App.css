@@ -82,6 +82,7 @@
 
 
 .containerS .headingS {
+  margin-bottom: 20px;
   padding-top: 10px;
   display: flex;
   padding-bottom: 4%;
@@ -186,7 +187,7 @@
 .navbar .modalCard .modal .modal-content .btn-close {
 
   margin-left: 450px;
-  margin-top: 10px;
+  margin-top: 45px;
 }
 
 /* notepage */
@@ -247,46 +248,41 @@
 
 .fixed_header {
   border-radius: 1.5rem;
-  height: 90%;
-  width: 100%;
-  /* table-layout: fixed; */
-  /* border-collapse: collapse; */
+  table-layout: fixed;
+  border-collapse: collapse;
+  /* width: 90%; */
+  
 }
 
 .fixed_header tbody {
-
+  width: 90%;
   background: rgba(232, 232, 232, 0.561);
   color: rgb(0, 0, 0);
-  padding: 8px 0px;
-  display: block;
-  width: 100%;
-  overflow: auto;
-  height: 330px;
-  font-size: 25px;
+  text-align: center;
+  font-size: 25px; 
+  height: 300px;
 }
 
-.fixed_header thead tr {
-  display: block;
+tbody, td, tfoot, th, thead, tr{
+  padding: 10px 20px;
+  
 }
 
-
-.fixed_header thead tr th {
+.fixed_header thead {
+  width: 90%;
   text-align: center;
   background-color: #3ec8ea;
   color: #292355;
   font-size: 30px;
-}
+ }
 
-.fixed_header th {
-  padding: 7px 50px;
-}
 
-.fixed_header th,
-.fixed_header tbody tr td {
-  padding: 7px 60px;
-  width: 240px;
+ .notepre{
   text-align: center;
-}
+  margin-top: 30px ;
+  font-size: 40px;
+  font-weight: bold;
+ }
 
 
 /* LandingPag */
@@ -580,7 +576,7 @@
   color: white;
 }
 
-.App-header button{
+.App-header button {
   background-color: #6351c6;
   display: flex;
   align-items: center;
@@ -589,21 +585,22 @@
   border: none;
   padding: 5px 10px;
   margin-bottom: 20px;
-border-radius: .5rem;
+  border-radius: .5rem;
   color: white;
 }
 
-.App-header button:hover{
+.App-header button:hover {
   background-color: #241670;
 }
 
-.dropdown{
+.dropdown {
   width: 50%;
   padding: 0px 10px;
   /* margin-left: 25px; */
   margin-bottom: 20px;
 }
-.dropdown .dropbtn{
+
+.dropdown .dropbtn {
   height: 40px;
   border: none;
   color: black;
@@ -611,22 +608,22 @@ border-radius: .5rem;
 
 }
 
-.dropdown button{
-     width: 90%;
-    margin: 0px;
-    border-radius: 2rem;
+.dropdown button {
+  width: 50%;
+  margin: 0px;
+  border-radius: 2rem;
 }
 
-.SignUplabel label select{
+.SignUplabel label select {
   cursor: pointer;
   margin: 0 0px 10px 0px;
   padding: 0 3px;
-  width: 360px;
+  width: 100%;
   height: 40px;
-  background-color: #9b87ff;
+  background-color: #f3f2f6;
   border: none;
-  color: rgb(255, 254, 254);
-  font-size: 25px;
+  /* color: rgb(255, 254, 254); */
+  /* font-size: 25px; */
   list-style: none;
   overflow: hidden;
   border-radius: 0.3rem;

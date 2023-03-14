@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import { Link } from "react-router-dom";
 import { SiGooglesheets } from "react-icons/si";
 import photo from '../img/note.jpg'
+import axios from 'axios';
+
 
 
 export default function Notes() {
@@ -22,17 +24,58 @@ export default function Notes() {
         setVal({ ...val, [name]: value });
     }
 
+    const [dataNote, setNoteData] = useState([]);
 
-    const [Data, setData] = useState([]);
+
+    const [loading, setLoading] = useState(true);
+
 
 
     // onsubmit
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newData = { ...val, id: Date().toString() }
-        setData([...Data, newData]);
-        console.log(Data);
+    const handleSubmit = async (e) => {
+
+        try {
+            // Call server API to send the data
+            // e.preventDefault();
+            console.log(val);
+            const { Branch, Semester, subjectId, type } = val;
+            const setData = `
+            Branch: ${Branch},
+            Semester: ${Semester},
+            Subject: ${subjectId},
+            Opt: ${type}
+            `;
+
+            // post the data
+            console.log(setData);
+            setLoading(true);
+            const response = await axios.get(`http://localhost:8080/collegeazy/notes/fetch/${subjectId}/${type}`);
+            setNoteData(response.data);
+            console.log(dataNote);
+            // update the state with the fetched data
+            console.log("Successfully Submitted");
+            alert("Successfully Submitted");
+
+        } catch (error) {
+            console.log(error);
+            alert("An error occurred while submitting the form.");
+        }
+        finally {
+            // make sure to set the loading state to false after data is fetched
+            setLoading(false);
+        }
+
+        // Clear the form fields after submission
+        // setVal({
+        //     Branch: "",
+        //     Semester: "",
+        //     Subject: "",
+        //     Opt: ""
+        // })
+
     }
+
+
 
 
 
@@ -41,7 +84,7 @@ export default function Notes() {
             return (
                 <>
                     <option style={{ color: "blue" }}>SUBJECT</option>
-                    <option value="ES-101">programmng in C</option>
+                    <option value="CE-109">programmng in C</option>
                     <option value="BS-103">applied chemistry</option>
                     <option value="CHEMISRTY">C</option>
                     <option value="DSA">D</option>
@@ -53,7 +96,7 @@ export default function Notes() {
             );
         }
 
-        else if(val.Branch === "CSE" && val.Semester === "2nd"){
+        else if (val.Branch === "CSE" && val.Semester === "2nd") {
             return (
                 <>
                     <option style={{ color: "blue" }}>SUBJECT</option>
@@ -69,7 +112,7 @@ export default function Notes() {
             );
         }
 
-        else if(val.Branch === "CSE" && val.Semester === "3rd"){
+        else if (val.Branch === "CSE" && val.Semester === "3rd") {
             return (
                 <>
                     <option style={{ color: "blue" }}>SUBJECT</option>
@@ -144,7 +187,7 @@ export default function Notes() {
 
 
                         <label placeholder='Subject'>
-                            <select id='Subject' name='Subject' value={val.Subject} onChange={handleInput} >
+                            <select id='subjectId' name='subjectId' value={val.subjectId} onChange={handleInput} >
                                 <option style={{ color: "blue" }}>SUBJECT</option>
                                 <Sub />
                             </select>
@@ -154,9 +197,9 @@ export default function Notes() {
 
 
                         <label placeholder='OPTION'>
-                            <select id='Opt' name='Opt' value={val.Opt} onChange={handleInput} >
+                            <select id='type' name='type' value={val.type} onChange={handleInput} >
                                 <option style={{ color: "blue" }}>OPTION</option>
-                                <option value="NOTES">NOTES</option>
+                                <option value="pdf">NOTES</option>
                                 <option value="BOOKS">BOOKS PDF</option>
                                 <option value="YOUTUBE">YOUTUBE LINKS</option>
                                 <option value="WEB">WEB LINKS</option>
@@ -168,57 +211,65 @@ export default function Notes() {
                         </span>
                     </form>
                 </div>
-
-
                 <h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Playfair Display SC', serif", color: "#9b87ff", marginTop: "15px", }}>APPLY FILTER FOR BETTER.</h2>
-
-
             </div>
 
-            <div className="notesPage" >
-                <div className="notebox">
-                    <div className="table">
-                        <div className="row">
-                            <div>
-                                <body>
-                                    <table className="fixed_header" id='fixed_header'>
-                                        <thead>
-                                            <tr>
-                                                <th>S No.</th>
-                                                <th>Subject</th>
-                                                <th>Chapter</th>
-                                                <th>Date</th>
-                                                <th>Downlod</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1.</td>
-                                                <td>Physics</td>
-                                                <td>1</td>
-                                                <td>9-12-2022</td>
-                                                <td>
-                                                    <Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Notes</Link>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>Chemistry</td>
-                                                <td>1</td>
-                                                <td>8-12-2022</td>
-                                                <td>
-                                                    <Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Notes</Link>
-                                                </td>
-                                            </tr>
+            <table className="fixed_header" id='fixed_header'>
+                <thead>
+                    <tr>
+                        <th>S No.</th>
+                        <th>Subject</th>
+                        <th>Downlod</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                                        </tbody>
-                                    </table>
-                                </body>
+                    <tr>
+                        <td>1</td>
+                        <td>physics</td>
+                        <td><Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Download</Link> </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+
+            {/* {loading ? (
+                <p className='notepre'>No data available...</p>
+            ) : (
+                <div className="notesPage" >
+                    <div className="notebox">
+                        <div className="table">
+                            <div className="row">
+                                <div>
+                                    <body>
+                                        <table className="fixed_header" id='fixed_header'>
+                                            <thead>
+                                                <tr>
+                                                    <th>S No.</th>
+                                                    <th>Subject</th>
+                                                    <th>Downlod</th>
+                                                </tr>
+                                            </thead>
+                                        
+                                            <tbody>
+                                                {dataNote.map((note) => (
+                                                    <tr>
+                                                        <td>{note.id}</td>
+                                                        <td>{note.data}</td>
+                                                        <td><Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Download</Link> </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </body>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )} */}
         </>
     )
 }
