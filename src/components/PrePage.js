@@ -1,24 +1,73 @@
-import React , { useState } from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import { FaDownload } from "react-icons/fa";
 import { FaBookReader } from "react-icons/fa";
 import profile from '../img/profile.png'
 import Pdfviewer from './Pdfviewer';
 import Note from './Note';
+import axios from 'axios';
+import { useParams ,useLocation} from 'react-router-dom';
 
 
 
+export default function PrePage(props) {
 
+  const params = useParams();
+  const iid = parseInt(params.id, 10);
+  console.log(iid, "this is iiddd");
+  console.log(params, "this is params");
 
+  const location = useLocation();
+  console.log(props, "props");
+  console.log(location, "location hooks");
 
-export default function PrePage() {
+  const dataNote = location.state?.data;
+  console.log(dataNote, "this is pre page");
 
+  const result = dataNote.find(obj => obj.id === iid);
+  console.log(result, "this is result");
+
+  let url = null;
+  if (result && iid === result.id) {
+    url = result.path;
+  }
+
+  console.log(url, "this is url");
+
+  const [loading, setLoading] = useState(true);
+ 
+  
 
   const [view, setView] = useState(false);
 
-  const handleClick = () => {
+
+  // const [file, setFile] = (
+  //      url
+  // )  
+
+  // const files = dataNote.path;
+
+  const handlePreviewPage = async (e) => {
     setView(!view);
+    try {
+      // setLoading(true);
+      //  const response = await axios.get(`http://localhost:8080/collegeazy/notes/file/${url}`);
+      //  console.log(file);
+      // setFile(response.data);
+      console.log('Successfully Submitted');
+      alert('Successfully Submitted');
+    } catch (error) {
+      console.log(error);
+      alert('An error occurred while submitting the form.');
+    }
+    finally {
+      // make sure to set the loading state to false after data is fetched
+      setLoading(false);
   }
+
+  };
+
+
 
   return (
 
@@ -34,8 +83,64 @@ export default function PrePage() {
               <h1>Physics unit-1 Mechanics-motion and its type</h1>
             </div>
             <button className='btn1' > Free Download <FaDownload /></button>
-            <button className='btn2' onClick={handleClick}>Preview <FaBookReader /></button>
-            <div className="userpro">
+            <button className='btn2' onClick={handlePreviewPage}  >Preview <FaBookReader /></button>
+          </div>
+          <br />
+
+        </div>
+        <div className="PDF-viewer">
+
+        {loading ? (
+                <p className='notepre'>No data available...</p>
+            ) : (
+
+            <Pdfviewer url={url} />
+            
+            )}
+
+
+        </div>
+      </div>
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <div className="userpro">
 
               <div className="user" >
                 <h2 style={{ fontSize: "20px" }}>Uploded By</h2>
@@ -49,22 +154,4 @@ export default function PrePage() {
                 <h1 style={{ fontSize: "80px" }}>500</h1>
                 <h4>Downloads</h4>
               </div>
-            </div>
-          </div>
-          <br />
-
-        </div>
-        <div className="PDF-viewer">
-
-          {" "} {view ? (
-
-            <Pdfviewer />
-
-          ) : (<Note/>)}
-
-
-        </div>
-      </div>
-    </>
-  )
-}
+            </div> */}

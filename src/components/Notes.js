@@ -4,10 +4,18 @@ import { Link } from "react-router-dom";
 import { SiGooglesheets } from "react-icons/si";
 import photo from '../img/note.jpg'
 import axios from 'axios';
+import PrePage from './PrePage';
+// import Pdfviewer from './Pdfviewer';
 
 
 
 export default function Notes() {
+    const [SelectedPath, setSelectedPath] = useState()
+
+    const handleClickPath = (path) => {
+        setSelectedPath(path);
+      };
+
 
     const [val, setVal] = useState({
         Branch: "",
@@ -24,10 +32,15 @@ export default function Notes() {
         setVal({ ...val, [name]: value });
     }
 
-    const [dataNote, setNoteData] = useState([]);
+    const [dataNote, setNoteData] = useState([
+        // { id: 1, title: "Note 1", path: "/sample.pdf" },
+        // { id: 2, title: "Note 2", path: "path/to/note2" },
+        // { id: 3, title: "Note 3", path: "/sample.pdf" },
+    ]);
 
 
     const [loading, setLoading] = useState(true);
+
 
 
 
@@ -36,7 +49,7 @@ export default function Notes() {
 
         try {
             // Call server API to send the data
-            // e.preventDefault();
+            e.preventDefault();
             console.log(val);
             const { Branch, Semester, subjectId, type } = val;
             const setData = `
@@ -48,11 +61,13 @@ export default function Notes() {
 
             // post the data
             console.log(setData);
+            console.log(dataNote);
+
             setLoading(true);
             const response = await axios.get(`http://localhost:8080/collegeazy/notes/fetch/${subjectId}/${type}`);
-            setNoteData(response.data);
+             setNoteData(response.data);
             console.log(dataNote);
-            // update the state with the fetched data
+           // update the state with the fetched data
             console.log("Successfully Submitted");
             alert("Successfully Submitted");
 
@@ -64,14 +79,6 @@ export default function Notes() {
             // make sure to set the loading state to false after data is fetched
             setLoading(false);
         }
-
-        // Clear the form fields after submission
-        // setVal({
-        //     Branch: "",
-        //     Semester: "",
-        //     Subject: "",
-        //     Opt: ""
-        // })
 
     }
 
@@ -214,28 +221,7 @@ export default function Notes() {
                 <h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Playfair Display SC', serif", color: "#9b87ff", marginTop: "15px", }}>APPLY FILTER FOR BETTER.</h2>
             </div>
 
-            <table className="fixed_header" id='fixed_header'>
-                <thead>
-                    <tr>
-                        <th>S No.</th>
-                        <th>Subject</th>
-                        <th>Downlod</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td>1</td>
-                        <td>physics</td>
-                        <td><Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Download</Link> </td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-
-            {/* {loading ? (
+            {loading ? (
                 <p className='notepre'>No data available...</p>
             ) : (
                 <div className="notesPage" >
@@ -247,21 +233,30 @@ export default function Notes() {
                                         <table className="fixed_header" id='fixed_header'>
                                             <thead>
                                                 <tr>
-                                                    <th>S No.</th>
                                                     <th>Subject</th>
                                                     <th>Downlod</th>
                                                 </tr>
                                             </thead>
-                                        
+
                                             <tbody>
-                                                {dataNote.map((note) => (
-                                                    <tr>
-                                                        <td>{note.id}</td>
+                                            {dataNote.map((note) => (
+                                            <tr key={note.id}>
                                                         <td>{note.data}</td>
-                                                        <td><Link style={{ textDecoration: "none" }} to="/Notes/PrePage">Download</Link> </td>
+                                                        <td>
+                                                            <Link
+                                                                onClick={() => handleClickPath(note.id)}
+                                                                style={{ textDecoration: "none" }}
+                                                                to={`/note/PrePage/${note.id}`}
+                                                                state={{ data: dataNote}}
+                                                            >
+                                                                Download
+                                                            </Link>
+                                                        </td>
                                                     </tr>
-                                                ))}
+                                                 ))}
+                                               
                                             </tbody>
+
                                         </table>
                                     </body>
                                 </div>
@@ -269,8 +264,9 @@ export default function Notes() {
                         </div>
                     </div>
                 </div>
-            )} */}
+            )}
         </>
     )
 }
+
 

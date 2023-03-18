@@ -29,7 +29,7 @@ export default function SignUp() {
             name: Yup.string().min(3).max(11).required("Please enter the name"),
             enrollment: Yup.string().min(6, 'Enrollment must be at least 6').required("Please enter the enrollment"),
             branch: Yup.string().min(1).required("Please select the branch"),
-            semester: Yup.string().min(1).required("Please select the semester"),
+            semester: Yup.number    ().min(1).required("Please select the semester"),
             password: Yup.string().min(6).required("Please enter the password"),
         }),
 
