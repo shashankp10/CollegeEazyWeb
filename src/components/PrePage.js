@@ -36,19 +36,22 @@ export default function PrePage(props) {
 
   const [loading, setLoading] = useState(true);
  
-  
 
-  const [view, setView] = useState(false);
+  const downloadFile = () => {
+    if (url) {
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.setAttribute('download', url);
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+  };
 
 
-  // const [file, setFile] = (
-  //      url
-  // )  
-
-  // const files = dataNote.path;
 
   const handlePreviewPage = async (e) => {
-    setView(!view);
+   
     try {
       // setLoading(true);
       //  const response = await axios.get(`http://localhost:8080/collegeazy/notes/file/${url}`);
@@ -82,7 +85,7 @@ export default function PrePage(props) {
             <div className="title" style={{ padding: "30px 30px", color: "#27a9d4" }}>
               <h1>Physics unit-1 Mechanics-motion and its type</h1>
             </div>
-            <button className='btn1' > Free Download <FaDownload /></button>
+            <button className='btn1' onClick={downloadFile} > Free Download <FaDownload /></button>
             <button className='btn2' onClick={handlePreviewPage}  >Preview <FaBookReader /></button>
           </div>
           <br />

@@ -12,6 +12,11 @@ import {
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
 import PrePage from './components/PrePage';
+import * as pdfjs from 'pdfjs-dist';
+
+// Set the URL of the PDF.js worker script
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 
 
 

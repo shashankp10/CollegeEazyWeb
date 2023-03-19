@@ -562,31 +562,31 @@ tbody, td, tfoot, th, thead, tr{
 
 /* pdf viwer */
 .App-header {
-  margin-left: 80px;
+  /* margin-left: 80px; */
   margin-top: -170px;
   padding: 30px 0px;
-  background-color: #ababab41;
-  width: 50%;
-  min-height: 100vh;
+  background-color: #fafafa41;
+  width: 80%;
+  /* min-height: 100vh; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 
 .App-header button {
-  background-color: #6351c6;
+ 
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  /* flex-direction: row;
   border: none;
   padding: 5px 10px;
   margin-bottom: 20px;
   border-radius: .5rem;
-  color: white;
+  color: white; */
 }
 
 .App-header button:hover {
@@ -628,3 +628,20 @@ tbody, td, tfoot, th, thead, tr{
   overflow: hidden;
   border-radius: 0.3rem;
 }
+
+
+
+.pdf-viewer::-webkit-scrollbar {
+  display: none;
+}
+
+.pdf-viewer::-webkit-media-controls-download-button {
+  display: none;
+}
+
+
+#maskedImage{
+display: none;
+display: 1;
+}
+

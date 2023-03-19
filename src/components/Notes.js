@@ -33,9 +33,9 @@ export default function Notes() {
     }
 
     const [dataNote, setNoteData] = useState([
-        // { id: 1, title: "Note 1", path: "/sample.pdf" },
-        // { id: 2, title: "Note 2", path: "path/to/note2" },
-        // { id: 3, title: "Note 3", path: "/sample.pdf" },
+        { id: 1, title: "Note 1", path: "/sample.pdf" },
+        { id: 2, title: "Note 2", path: "path/to/note2" },
+        { id: 3, title: "Note 3", path: "/sample.pdf" },
     ]);
 
 
