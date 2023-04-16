@@ -251,7 +251,7 @@
   table-layout: fixed;
   border-collapse: collapse;
   /* width: 90%; */
-  
+
 }
 
 .fixed_header tbody {
@@ -259,13 +259,18 @@
   background: rgba(232, 232, 232, 0.561);
   color: rgb(0, 0, 0);
   text-align: center;
-  font-size: 25px; 
+  font-size: 25px;
   height: 300px;
 }
 
-tbody, td, tfoot, th, thead, tr{
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
   padding: 10px 20px;
-  
+
 }
 
 .fixed_header thead {
@@ -274,15 +279,15 @@ tbody, td, tfoot, th, thead, tr{
   background-color: #3ec8ea;
   color: #292355;
   font-size: 30px;
- }
+}
 
 
- .notepre{
+.notepre {
   text-align: center;
-  margin-top: 30px ;
+  margin-top: 30px;
   font-size: 40px;
   font-weight: bold;
- }
+}
 
 
 /* LandingPag */
@@ -577,7 +582,7 @@ tbody, td, tfoot, th, thead, tr{
 }
 
 .App-header button {
- 
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -630,18 +635,193 @@ tbody, td, tfoot, th, thead, tr{
 }
 
 
-
-.pdf-viewer::-webkit-scrollbar {
-  display: none;
+/* shop */
+.page3 .containershop {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.pdf-viewer::-webkit-media-controls-download-button {
-  display: none;
+.imgS .shopimg {
+  width: 100%;
+}
+
+.imgS .shopimg img {
+  padding-top: 2rem;
+  padding-left: 1rem;
+  max-width: 100%;
+}
+
+.imgS .headtextS {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 6rem;
+}
+
+.page3 .container {
+  width: 100%;
+  height: 80%;
+  margin-top: 2px;
+}
+
+.row {
+  margin: 0;
+}
+
+.page3 .containershop .dropdownS label select {
+  cursor: pointer;
+  margin: 2rem 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #9b87ff;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  list-style: none;
+  overflow: hidden;
+  border-radius: .3rem;
+}
+
+.page3 .containershop .dropdownS label select option {
+  background-color: #f8efef;
+  color: #3ec8ea;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.page3 .conCard{
+  padding: 0 3rem;
+  /* background-color: #f3f3f3; */
+
+}
+
+@media (min-width: 768px) {
+  .page3 .containershop {
+    flex-direction: row;
+  }
+
+  .imgS .shopimg {
+    width: 50%;
+  }
+
+  .imgS .headtextS {
+    width: 50%;
+  }
+
+  .page3 .container {
+    width: 370px;
+  }
+}
+
+/* Attendencepage start */
+
+
+
+.row{
+  margin: 0;
+  margin-top: 20px
+}
+
+.sidebar {
+
+  height: 35.8rem;
+  /* background-color: #3ab4d3b4; */
+  /* border:10px solid; */
+  /* border-left: #241670; */
+  /* border-left: 15px solid #03809f; */
+  /* box-shadow: 2px 2px 5px hsl(250, 100%, 76%); */
+  margin: 20px 0px 0px 0px;
+  /* border-radius: 5px; */
+}
+
+.main {
+  height: 35.8rem;
+  border-radius: 5px;
+  /* border-color: #292355; */
+  /* background-color: #fafafa; */
+  width: 78.5%;
+  /* box-shadow: 2px 2px 5px #8f7af6; */
+  float: right;
+  /* display: inline-flex; */
+  margin: 20px 5px 10px 0px;
+  padding: 20px;
+}
+
+.btnn {
+  border-radius: 16px;
+  width: 190px;
+  height: 55px;
+  margin: 10px;
+  padding: 4px;
+  cursor: pointer;
+  border: none;
+  background-color: #9b87ff;
+}
+
+.btnn:hover {
+  background-color: #413387;
+  color: white;
+}
+
+.aa {
+margin: auto;
+
+  height: 200px;
+  width: 200px;
+}
+
+.count {
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 
-#maskedImage{
-display: none;
-display: 1;
+
+.progressCenter {
+  position: relative;
+  top: 150px;
+  left: 20%;
+  /* transform: translate(-50%, -50%); */
+  font-weight: bolder;
+  font-size: 4rem;
 }
 
+
+.count .dec .btn1{
+  justify-content: space-between;
+  color: white;
+  background-color: #9b87ff;
+  border-radius: 0.5rem;
+  width: 100px;
+  border: none;
+  height: 45px;
+  box-shadow: 2px 2px 9px rgba(249, 249, 249, 0.883);
+}
+
+.count .inc .btn2{
+  color: white;
+  justify-content: space-between;
+  background-color: #9b87ff;
+  border: none;
+  border-radius: 0.5rem;
+  width: 100px;
+  height: 45px;
+  box-shadow: 2px 2px 9px rgba(249, 249, 249, 0.883);
+}
+
+.count .dec .btn1:hover{
+  background-color: #6448f1;
+}
+
+.count .inc .btn2:hover{
+  background-color: #6448f1;
+}
+
+
+/* Attendencepage End */

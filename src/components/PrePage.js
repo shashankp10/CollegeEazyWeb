@@ -17,8 +17,8 @@ export default function PrePage(props) {
   console.log(iid, "this is iiddd");
   console.log(params, "this is params");
 
-  const location = useLocation();
   console.log(props, "props");
+  const location = useLocation();
   console.log(location, "location hooks");
 
   const dataNote = location.state?.data;

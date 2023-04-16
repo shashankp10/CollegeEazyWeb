@@ -33,7 +33,7 @@ export default function Navbar() {
               <Link className="nav-link active" to="/AttendancePage"><SiGooglesheets /> Attendance</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#"><MdSell /> Sell & Buy</a>
+              <Link className="nav-link active" to="/Shop"><MdSell />Store</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link active" href="#"><BsFillQuestionCircleFill /> About</a>
