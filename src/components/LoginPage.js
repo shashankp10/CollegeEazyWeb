@@ -4,14 +4,48 @@ import SignUp from './SignUp';
 import axios from 'axios';
 import * as Yup from "yup";
 import { useFormik } from 'formik';
+import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 
 export default function LoginPage() {
+
+  const navigate = useNavigate()
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   const [login, setLogin] = useState(true);
 
   const handleClick = () => {
     setLogin(!login);
   }
+
+  useEffect(() => {
+    if (localStorage.getItem("Token")) {
+      setIsLoggedIn(true);
+      navigate('/')
+    }
+    setIsLoggedIn(false);
+  }, []);
+
+
+  const handleLogin = () => {
+
+    if (localStorage.getItem("Token")) {
+      setIsLoggedIn(true);
+    }
+    setIsLoggedIn(false);
+  };
+
+
+
+  const handleLogout = () => {
+    if (localStorage.getItem("Token")) {
+      localStorage.removeItem("Token")
+      setIsLoggedIn(false);
+    }
+  };
+
+
 
   const formik = useFormik({
     initialValues: {
@@ -30,6 +64,11 @@ export default function LoginPage() {
           enrollment: values.enrollment,
           password: values.password,
         })
+          .then(result => {
+            alert("success")
+            localStorage.setItem("Token", result.data.token)
+            navigate("/")
+          })
         console.log("Successfully login");
         alert("Successfully login");
 
@@ -55,26 +94,34 @@ export default function LoginPage() {
                 <div className="heading">
                   <h1>Login </h1>
                 </div>
-                <input type="text" className="form-control"
-                  onChange={formik.handleChange}
-                  value={formik.values.enrollment}
-                  id="enrollment" autoComplete="off" name='enrollment' placeholder="Enrollment" />
-                {formik.touched.enrollment && formik.errors.enrollment ? (
-                  <div style={{fontSize:"10px", color:"red",marginLeft:"20px",marginBottom:"20px"}}>{formik.errors.enrollment}</div>
-                ) : null}
+                <div className="inputenroll">
+                  <input type="text" className="form-control enroll"
+                    onChange={formik.handleChange}
+                    value={formik.values.enrollment}
+                    id="enrollment" autoComplete="off" name='enrollment' placeholder="Enrollment" />
+                  {formik.touched.enrollment && formik.errors.enrollment ? (
+                    <div className='error'>{formik.errors.enrollment}</div>
+                  ) : null}
+                </div>
 
-                <input type="password" className="form-control"
-                  onChange={formik.handleChange}
-                  value={formik.values.password}
-                  id="floatingInput" autoComplete="off" name='password' placeholder="Password" />
-                {formik.touched.password && formik.errors.password ? (
-                  <div style={{fontSize:"10px", color:"red",marginLeft:"20px",marginBottom:"20px"}}>{formik.errors.password}</div>
-                ) : null}
+                <div className="passinput">
+                  <input type="password" className="form-control passs"
+                    onChange={formik.handleChange}
+                    value={formik.values.password}
+                    id="floatingInput" autoComplete="off" name='password' placeholder="Password" />
+                  {formik.touched.password && formik.errors.password ? (
+                    <div className='error'>{formik.errors.password}</div>
+                  ) : null}
 
-                <div className="column">
-                  <div className="button">
-                    <button className="btn " type="submit">Login</button>
-                    <span style={{ cursor: "pointer", alignItem: "left", color: "blue", textDecoration: "underline" }} onClick={handleClick}>Create A New Account</span>
+                </div>
+
+                <div className="columnL">
+                  <div className="buttonL">
+                    <button className="btn " type="submit" onClick={isLoggedIn ? handleLogout : handleLogin}>
+                      {isLoggedIn ? 'Logout' : 'Login'}
+                    </button>
+
+                    <span onClick={handleClick}>Create A New Account</span>
                   </div>
                 </div>
               </div>

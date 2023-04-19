@@ -703,22 +703,15 @@ const Sub = () => {
 
             <Navbar />
 
-            <div className="notepage" style={{ marginTop: "100px 0px " }} >
-
-                <div className="imga" style={{ marginBottom: "30px" }}>
-                    <img src={photo} alt="notes" style={{ width: "650px" }} />
-
-                    <div className="headtext" style={{ width: "500px", textAlign: "center", float: "right", margin: "90px 40px 0px 0px" }}>
-                        <h1 style={{ fontSize: "90px", fontFamily: "Playfair Display SC', serif", color: "#3ec8ea", }}> <SiGooglesheets />NOTES
+            <div className="notepageLand" >
+                    <div className="headtext">
+                        <h1> <SiGooglesheets />NOTES
                         </h1>
-                        <span style={{ color: "#9b87ff", fontSize: "20px" }}>We are here to provid best Notes for all semseter and all branch</span>
+                        <span>We are here to provid best Notes for all semseter and all branch</span>
                     </div>
-                </div>
-
-
-
-
+                    </div>
                 {/* filter */}
+                <div className="filter">
                 <div className='toggel'>
                     <form onSubmit={handleSubmit}>
                         <label placeholder='BRANCH'>
@@ -778,8 +771,12 @@ const Sub = () => {
                         </span>
                     </form>
                 </div>
-                <h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Playfair Display SC', serif", color: "#9b87ff", marginTop: "15px", }}>APPLY FILTER FOR BETTER.</h2>
-            </div>
+                </div>
+                <div className="heaaaadaplly">
+                 <h2>APPLY FILTER FOR BETTER.</h2>
+                </div>
+
+           
 
             {loading ? (
                 <p className='notepre'>No data available...</p>

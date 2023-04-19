@@ -1,24 +1,28 @@
 import React from 'react'
 import LandingPage from './LandingPage'
 import Navbar from './Navbar'
-import photo from '../img/homelogo.png'
+import photo from '../img/stu1.png'
 
 export default function HomePage() {
   return (
     <>
+    <div className="body">
       <div className='page3'>
       <Navbar/> 
-      <div className="heading" style={{float:"left",  marginLeft:"150px",marginTop:"150px"}}>
-      <h1 style={{ textAlign:"center",marginTop:"40px", color: "#3ec8ea", fontSize:"80px", fontFamily: "Playfair Display SC', serif"}}>WELCOME</h1>
-
-      <h1 style={{ textAlign:"center", color: "#3ec8ea", fontSize:"30px",fontFamily: "Playfair Display SC', serif"}}> TO  <span style={{color:"#9b87ff",fontSize:"50px"}}> College eazy </span> </h1>
-      
+      <div className="con">
+      <div className="headingH" >
+      <h1 className='welcome'>WELCOME TO
+      College eazy <br/><h6 >we provides Organized Concise Accurate Comprehensive Visual Personalized Reviewable notes for you. Best notes are organized in a logical and easy-to-follow manner, with headings, subheadings, and bullet points</h6>
+      <button className='btn btn-primary' style={{justifyContent:"center"}}>browsers notes</button>
+      </h1>
       </div>
-      <div className="img" style={{float:"right", marginRight:"70px",marginTop:"0px" }}>
-        <img src={photo} alt="img" style={{height: "550px", width: "570px",}} />
+      <div className="imgN">
+        <img src={photo} alt="img" />
+      </div>
       </div>
       </div>
       <LandingPage/>
+      </div>
       </>
   )
 }

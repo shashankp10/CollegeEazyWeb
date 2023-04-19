@@ -7,6 +7,7 @@ import { SiGooglesheets } from "react-icons/si";
 import { MdSell } from "react-icons/md";
 import Notes from './Notes';
 import SemesterCard from './SemesterCard';
+import { useState } from 'react';
 
 export default function Navbar() {
 
@@ -14,18 +15,30 @@ export default function Navbar() {
     // window.location.reload(false);
   }
 
+  const [navbar, setNavbar] = useState(false);
+
+  const setBackground =  ()=>{
+      if (window.scrollY >= 100){
+        setNavbar(true);
+      }
+      else{
+        setNavbar(false);
+      }
+  }
+
+  window.addEventListener('scroll',setBackground);
+
 
   return (
     <>
-    <div className="boxnav" >
-    <nav className="navbar navbar-expand-lg " style={{color:"#3ec8ea"}} >
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top "  >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/" style={{color:"#9b87ff",fontSize:"50px"}}>College Eazy</Link>
+        <Link className="navbar-brand" to="/">CE</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{margin:"auto"}}>
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{margin:"auto"}}>
           <li className="nav-item">
               <Link className="nav-link active" to="/Notes"><SiGooglesheets /> Notes</Link>
             </li>
@@ -40,8 +53,8 @@ export default function Navbar() {
             </li>
           </ul>
 
-          <div className='modalCard'>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#LoginPage">
+          <div className='modalCard' >
+            <button type="button" className="btn btn-primary LOGINBTN" data-bs-toggle="modal" data-bs-target="#LoginPage">
               Login
             </button>
             <div className="modal  login fade" id="LoginPage" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -57,7 +70,7 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-    </div>
+   
     </>
   )
 }
