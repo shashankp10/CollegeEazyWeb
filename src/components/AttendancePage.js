@@ -140,19 +140,17 @@ export default function AttendancePage() {
     <>
       <Navbar />
       <div className="attendance row" >
-        <div className="sidebar" style={{width:"25%"}}>
-           <h1 style={{ textAlign: "center", paddingBottom: "10px", paddingTop: "20px", }} > SUBJECTS 
-            </h1>
-             <ul style={{ listStyle: "none",padding:"0",justifyContent:"center",alignItems:"center",display:"grid" }}><Subject />
-             </ul>
+        <div className="sidebar" >
+           <h1> SUBJECTS</h1>
+             <ul><Subject /></ul>
         </div>
-        <div className="main" style={{width:"69%"}}>
+        <div className="main">
           <h2 style={{ textAlign: "center" }}>Attendence in <span style={{color:"red",textTransform:"uppercase"}}> {sub}</span></h2>
           <h2 style={{ textAlign: "center", color: "blue" }}> {userData.Branch}</h2>
 
 
-          <div className="bb row" style={{margin:"0",marginLeft:"60px" }}>
-            <div className="cc" style={{width:'30%'}}>
+          <div className="bb row">
+            <div className="cc">
               <div className="meter">
                 <div className="progressCenter">{attendancePercentage}%</div>
                 <div className="aa">
@@ -170,7 +168,7 @@ export default function AttendancePage() {
                 </div>
               </div>
 
-              <div className="count row" style={{margin:"0"}}>
+              <div className="count ">
                 <div className="dec" style={{width:'50%',padding:"0"}}>
                   <div className="decCount" style={{ fontSize: "25px" }}>{dec}</div>
                   <button className="decs btn1" onClick={() => { handleDecrement();    handleTotal(); }} style={{ fontSize: "20px" }}>
@@ -184,7 +182,7 @@ export default function AttendancePage() {
               </div>
             </div>
             <div className="atte-img" style={{width:'70%',display:"grid",justifyContent:"center",alignItems:"center",paddingLeft:"130px",paddingTop:"60px" }}>
-              <img src={tasveer} alt="img" style={{ width: "450px",overflow:"hidden"}} />
+              {/* <img src={tasveer} alt="img" style={{ width: "450px",overflow:"hidden"}} /> */}
             </div>
           </div>
         </div>

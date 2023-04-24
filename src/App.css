@@ -1084,10 +1084,11 @@ tr {
   align-items: center;
   justify-content: center;
   height: 80vh;
-  background-image:  url(./img/note.jpg);
+  background-image: url(./img/note.jpg);
   background-position: center center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .notepageLand .headtext {
@@ -1098,11 +1099,11 @@ tr {
 .notepageLand .headtext h1 {
   font-size: 7rem;
   color: #5b09ff;
-    text-shadow: 2px 2px 4px #ffffff;
+  text-shadow: 2px 2px 4px #ffffff;
 
 }
 
-.notepageLand .headtext span{
+.notepageLand .headtext span {
   color: #241670;
   text-shadow: 2px 2px 4px #ffffff;
   font-size: 2rem;
@@ -1115,12 +1116,12 @@ tr {
 .toggel {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   height: 80px;
   background-color: #3ec8ea36;
 }
 
- .heaaaadaplly{
+.heaaaadaplly {
   text-align: center;
   color: red;
 }
@@ -1180,10 +1181,10 @@ tr {
     font-size: 4.5rem;
     color: #5b09ff;
     text-shadow: 2px 2px 4px #ffffff;
-  
+
   }
 
-  .notepageLand .headtext span{
+  .notepageLand .headtext span {
     color: #241670;
     text-shadow: 2px 2px 4px #ffffff;
     font-size: 1.3rem;
@@ -1194,7 +1195,7 @@ tr {
     height: 70vh;
   }
 
-  .filter{
+  .filter {
     padding: 10px 40px;
   }
 
@@ -1202,26 +1203,26 @@ tr {
     height: auto;
   }
 
-  .toggel .but{
+  .toggel .but {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .toggel .but button {
-    margin: 20px 0 10px 0 ;
+    margin: 20px 0 10px 0;
     font-size: 20px;
     width: 120px;
     height: 50px;
   }
 
-.toggel form label select option {
-  background-color: rgb(248, 239, 239);
-  color: #3ec8ea;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-}
+  .toggel form label select option {
+    background-color: rgb(248, 239, 239);
+    color: #3ec8ea;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
 
   .toggel form label select {
@@ -1354,8 +1355,16 @@ tr {
 
 
 /* shop */
-.page3 .containershop {
-  margin-top: 3rem;
+.imgS{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page4 .imgS .containershop {
+  width: 50%;
+  height: 100vh;
+  margin-top: 1rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
@@ -1363,34 +1372,20 @@ tr {
   align-items: center;
 }
 
-.imgS .shopimg {
-  width: 100%;
-}
-
-.imgS .shopimg img {
-  padding-top: 2rem;
-  padding-left: 1rem;
-  max-width: 100%;
-}
 
 .imgS .headtextS {
-  width: 100%;
   text-align: center;
   padding: 2rem;
-  margin-top: 6rem;
+  margin-top:6rem;
 }
 
-.page3 .container {
+.page4 .container {
   width: 100%;
   height: 80%;
   margin-top: 2px;
 }
 
-.row {
-  margin: 0;
-}
-
-.page3 .containershop .dropdownS label select {
+.page4 .containershop .dropdownS label select {
   cursor: pointer;
   margin: 2rem 0;
   width: 100%;
@@ -1404,7 +1399,7 @@ tr {
   border-radius: .3rem;
 }
 
-.page3 .containershop .dropdownS label select option {
+.page4 .containershop .dropdownS label select option {
   background-color: #f8efef;
   color: #3ec8ea;
   text-align: center;
@@ -1412,14 +1407,11 @@ tr {
   cursor: pointer;
 }
 
-.page3 .conCard {
-  padding: 0 3rem;
-  /* background-color: #f3f3f3; */
 
-}
 
-@media (min-width: 768px) {
-  .page3 .containershop {
+
+@media screen and (min-width: 300px) and (max-width: 600px)    {
+  .page4 .containershop {
     flex-direction: row;
   }
 
@@ -1431,50 +1423,111 @@ tr {
     width: 50%;
   }
 
-  .page3 .container {
-    width: 370px;
+  .imgS .headtextS {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    margin-top:2rem;
   }
+
+
 }
 
 /* Attendencepage start */
 
 
+.attendance {
+  background-image: url(./img/att.jpg);
+  background-position: top center;
+  background-attachment: scroll;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
 .row {
   margin: 0;
-  margin-top: 13px
+  margin-top: 3rem;
 }
 
-.sidebar {
-
-  height: 35.8rem;
-  /* background-color: #3ab4d3b4; */
-  /* border:10px solid; */
-  /* border-left: #241670; */
-  /* border-left: 15px solid #03809f; */
-  /* box-shadow: 2px 2px 5px hsl(250, 100%, 76%); */
-  margin: 20px 0px 0px 0px;
-  /* border-radius: 5px; */
+.attendance .sidebar {
+  background-color: #ffffff;
+  height: 100%;
+  width: 25%;
+  margin: 0px 0px 0px 0px;
+  border-radius: 1.5rem;
+}
+.attendance .sidebar:hover {
+  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.141);
 }
 
-.main {
-  height: 35.8rem;
+.attendance .sidebar h1 {
+  text-align: center;
+  padding: 2px 0 0 0px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.attendance .main {
+  height: 100%;
   border-radius: 5px;
-  /* border-color: #292355; */
-  /* background-color: #fafafa; */
-  width: 78.5%;
-  /* box-shadow: 2px 2px 5px #8f7af6; */
-  float: right;
-  /* display: inline-flex; */
+  width: 70%;
   margin: 20px 5px 10px 0px;
   padding: 20px;
+}
+
+
+.bb {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  left: 65%;
+  bottom: 20px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+
+  .attendance .sidebar {
+  width: 100%;
+  margin: 20px 0px;
+  border-radius: 0;
+  }
+  
+  .attendance .main {
+  width: 100%;
+  margin: 10px 0px;
+  border-radius: 0;
+  }
+  
+  .bb {
+  display: inline-flexbox;
+  margin: 0 auto;
+  position: relative;
+  left: 10%;
+  bottom: 0;
+  }
+  
+  }
+
+.count {
+  display: inline-flex;
+  gap: 20px;
 }
 
 .btnn {
   border-radius: 16px;
   width: 190px;
   height: 55px;
-  margin: 10px;
+  margin-bottom: .6rem;
   padding: 4px;
   cursor: pointer;
   border: none;
@@ -1488,7 +1541,6 @@ tr {
 
 .aa {
   margin: auto;
-
   height: 200px;
   width: 200px;
 }
@@ -1503,11 +1555,11 @@ tr {
 
 .progressCenter {
   position: relative;
-  top: 150px;
-  left: 20%;
-  /* transform: translate(-50%, -50%); */
+  top: 170px;
+  left: 80%;
+  transform: translate(-50%, -50%);
   font-weight: bolder;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 

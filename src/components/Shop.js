@@ -1,23 +1,20 @@
 import React from 'react'
 import Navbar from './Navbar'
 import photo from '../img/book.jpg'
-import photoS from '../img/buyandsell.jpg'
+import tasveer from '../img/buyandsell.jpg'
 import { SiGooglesheets } from 'react-icons/si'
 import { MdSell } from 'react-icons/md'
 import Shoppre from './Shoppre'
 
 export default function Shop() {
     return (
-        <div className='page3 '>
+        <>
+        <div className='page4 '>
 
             <Navbar /> 
 
             <div className="containershop " >
-
-
-                <div className="imgS row">
-
-
+                <div className="imgS">
                     <div className="headtextS">
                         <h1 style={{ fontSize: "60px", fontFamily: "Playfair Display SC', serif", color: "#3ec8ea", }}> <MdSell />STORE EAZY
                         </h1>
@@ -33,25 +30,17 @@ export default function Shop() {
                         </div>
                         <span style={{ color: "#9b87ff", fontSize: "20px" }}>We are here to provid best Notes for all semseter and all branch</span>
                     </div>
-                    <div className="shopimg">
-                        <img src={photoS} alt="shop" style={{ width: "550px" }} />
+                    <div className="tasveer">
+                        <img src={tasveer} alt="" style={{width:"70%"}} />
                     </div>
-
                 </div>
             </div>
-            <hr/>
+           
+            </div>
 
 
-
-            {/* <InfiniteScroll
-                dataLength={articles.length}
-                next={fetchMoreData}
-                hasMore={articles.length !== totalResults}
-                loader={<Spinner />}s
-            > */}
-
-            <div className="conCard  row">
-                <div className="container  ">
+            <div className="conCard ">
+                <div className="container">
                     <div className="card"  >
                         <img src={photo} className="card-img-top" alt="..." style={{ height: "200px", width: "200px" }} />
                         <div className="card-body">
@@ -184,7 +173,7 @@ export default function Shop() {
                     </div>
                 </div>
             </div>
-            {/* </InfiniteScroll> */}
-        </div>
+    
+            </>
     )
 }
