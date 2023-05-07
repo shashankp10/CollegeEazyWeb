@@ -9,14 +9,26 @@
 
 
 .container {
+
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  height: 400px;
-  width: 450px;
+  /* margin-top: 7rem; */
+  height: 450px;
+  width: 800px;
+  /* width: 450px; */
   padding-top: 30px;
   border-radius: 1.1rem;
+  /* background-color: rgba(245, 245, 245, 0.362); */
+  border:2px solid white;
+  
+  /* background-color: #ededed; */
+}
+
+.container:hover{
+  box-shadow: 0px 3px 4px 2px #01183048;
 }
 
 .inputenroll {
@@ -57,6 +69,7 @@
 }
 
 .container .buttonL span {
+  padding-left: 1rem;
   cursor: pointer;
   align-items: center;
   color: blue;
@@ -85,10 +98,11 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 300px) and (max-width: 600px) {
   .container {
+    grid-template-columns: repeat(1, 1fr);
     width: 90%;
-    padding-top: 10%;
+    padding-top: 1px;
     height: 300px;
   }
 
@@ -121,21 +135,46 @@
     font-size: 12px;
     margin-left: 10px;
   }
+
+  
 }
 
 
+
+.log{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color:#27a9d41f;
+  padding-top: 2.4rem;
+}
+.log .page{
+  display: block;
+  width: 800PX;
+  height: auto;
+  border-radius: 2rem;
+}
 /* login end */
 
 /* signup page */
 
 
 .containerS {
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 450px;
+  height: 470px;
+  width: 800px;
   border-radius: 1.1rem;
+  padding: 20px 20px;
+  border:2px solid white;
+}
+
+.containerS:hover{
+  box-shadow: 0px 3px 4px 2px #01183048;
 }
 
 .nameeed {
@@ -209,14 +248,17 @@
 
 
 .containerS .button {
-  margin-left: 30px;
-  margin-top: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.containerS .button .btn span{
+  padding-left: 2rem;
+}
+
 .containerS .button .btn {
+
   color: white;
   background-color: #9b87ff;
   border-radius: .5rem;
@@ -240,8 +282,9 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 300px) and (max-width: 600px) {
   .containerS {
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
     border-radius: 1rem;
   }
@@ -313,6 +356,12 @@
     margin-left: 10px;
     margin-bottom: 2px;
     font-size: 0.7rem;
+  }
+
+  .log{
+    height: 100%;
+    background-color:#27a9d41f;
+    padding-top: 4.4rem;
   }
 }
 
@@ -1079,6 +1128,9 @@ tr {
 
 /* noteboxdropdown */
 
+
+
+
 .notepageLand {
   display: flex;
   align-items: center;
@@ -1111,6 +1163,13 @@ tr {
 
 
 /* notepage */
+
+
+.notesPage{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
 
 
 .toggel {

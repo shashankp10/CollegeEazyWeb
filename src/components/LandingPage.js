@@ -7,13 +7,6 @@ import { useEffect } from 'react';
 
 export default function LandingPage() {
 
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        if (!localStorage.getItem("Token")) {
-            navigate('/')
-        }
-    }, [])
     return (
         <>
             <div className="LandingPage">

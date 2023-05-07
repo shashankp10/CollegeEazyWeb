@@ -2,8 +2,29 @@ import React from 'react'
 import LandingPage from './LandingPage'
 import Navbar from './Navbar'
 import photo from '../img/stu1.png'
+// import { useNavigate } from 'react-router-dom'
+// import { useEffect } from 'react'
 
 export default function HomePage() {
+
+  
+  // const navigate = useNavigate()
+
+
+
+  // useEffect(() => {
+
+  //   if (localStorage.getItem('Token')) {
+  //     console.log("stored")
+  //   } else {
+  //     console.log("not found stored")
+  //   }
+  //     if (!localStorage.getItem("Token")) {
+  //         console.log("this is homw useeffect")
+  //     }
+  // }, [])
+
+
   return (
     <>
     <div className="body">

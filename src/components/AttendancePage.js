@@ -146,7 +146,7 @@ export default function AttendancePage() {
         </div>
         <div className="main">
           <h2 style={{ textAlign: "center" }}>Attendence in <span style={{color:"red",textTransform:"uppercase"}}> {sub}</span></h2>
-          <h2 style={{ textAlign: "center", color: "blue" }}> {userData.Branch}</h2>
+          {/* <h2 style={{ textAlign: "center", color: "blue" }}> {userData.Branch}</h2> */}
 
 
           <div className="bb row">

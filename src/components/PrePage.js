@@ -6,7 +6,7 @@ import profile from '../img/profile.png'
 import Pdfviewer from './Pdfviewer';
 import Note from './Note';
 import axios from 'axios';
-import { useParams ,useLocation} from 'react-router-dom';
+import { useParams ,useLocation, Navigate} from 'react-router-dom';
 
 
 
@@ -50,6 +50,25 @@ export default function PrePage(props) {
 
 
 
+  const DownloadButton = ({ isLoggedIn }) => {
+    const handleDownload = () => {
+      if (!localStorage.getItem("Token")) {
+        if (url) {
+          const downloadLink = document.createElement('a');
+          downloadLink.href = url;
+          downloadLink.setAttribute('download', url);
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        }
+      } else {
+        // redirect to login page
+        Navigate('/login')
+      }
+    };
+
+
+
   const handlePreviewPage = async (e) => {
    
     try {
@@ -85,7 +104,7 @@ export default function PrePage(props) {
             <div className="title" style={{ padding: "30px 30px", color: "#27a9d4" }}>
               <h1>Physics unit-1 Mechanics-motion and its type</h1>
             </div>
-            <button className='btn1' onClick={downloadFile} > Free Download <FaDownload /></button>
+            <button className='btn1' onClick={DownloadButton} > Free Download <FaDownload /></button>
             <button className='btn2' onClick={handlePreviewPage}  >Preview <FaBookReader /></button>
           </div>
           <br />
@@ -106,6 +125,7 @@ export default function PrePage(props) {
       </div>
     </>
   )
+}
 }
 
 
